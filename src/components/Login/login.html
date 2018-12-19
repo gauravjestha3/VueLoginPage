@@ -1,0 +1,9 @@
+<div id="login">
+        <Alertmessage v-show="alert.showAlert" :alert="alert" />
+    <label>Enter first Number</label>
+    <input type="text" @keyup="validateMobileNumber()" name="username" maxlength="10" v-model="username" required />
+    <label>Password</label>
+    <input type="password" autocomplete="off" name="password" v-model="password" v-validate="'required'" />
+    <button type="submit" @click="login()"> LOgin</button>
+
+</div>
