@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     validateMobileNumber: function () {
-      var regexNumbers = /[^0-9-]*/g;
+      var regexNumbers = /[^[7-9]{9}]*/g;
       this.username = this.username.replace(regexNumbers, '');
     },
 

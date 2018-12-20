@@ -1,9 +1,11 @@
 <div id="login">
         <Alertmessage v-show="alert.showAlert" :alert="alert" />
-    <label>Enter first Number</label>
-    <input type="text" @keyup="validateMobileNumber()" name="username" maxlength="10" v-model="username" required />
+    <label>Enter MobileNumber</label>
+    <input type="text" @keyup="validateMobileNumber()" name="username" maxlength="10" v-model="username" v-validate="'required'" />
+<span v-show="errors.has('username')">{{errors.first('username')}}</span>
     <label>Password</label>
-    <input type="password" autocomplete="off" name="password" v-model="password" v-validate="'required'" />
+    <input type="password" v-validate="'required'" autocomplete="off" name="password" v-model="password"  />
+    <span v-show="errors.has('password')">{{ errors.first('password') }}</span>
     <button type="submit" @click="login()"> LOgin</button>
 
 </div>
