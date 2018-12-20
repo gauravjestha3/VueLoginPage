@@ -1,7 +1,7 @@
 <div id="login">
         <Alertmessage v-show="alert.showAlert" :alert="alert" />
     <label>Enter MobileNumber</label>
-    <input type="text" @keyup="validateMobileNumber()" name="username" maxlength="10" v-model="username" v-validate="'required'" />
+    <input type="text" @keyup="validateMobileNumber()" name="username" maxlength="10" v-model="username"  v-validate="'required|mobileValidity'" />
 <span v-show="errors.has('username')">{{errors.first('username')}}</span>
     <label>Password</label>
     <input type="password" v-validate="'required'" autocomplete="off" name="password" v-model="password"  />

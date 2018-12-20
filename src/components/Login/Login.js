@@ -7,7 +7,8 @@ import Alert from '@/Common/Alert';
 import showAlert from '@/mixins/showAlert.js';
 import Vue from 'vue'
 import Alertmessage from '@/components/Alertmessage/index.vue'
-
+import regexMobile from '@/Common/regexMobile.js'
+import validationMessage from '@/Common/validationMessage'
 Vue.use(VeeValidate);
 
 export default {
@@ -26,9 +27,12 @@ export default {
 
     }
   },
+  created() {
+    VeeValidate.Validator.extend('mobileValidity', regexMobile);
+  },
   methods: {
     validateMobileNumber: function () {
-      var regexNumbers = /[^[7-9]{9}]*/g;
+      var regexNumbers = /([^\d])/;
       this.username = this.username.replace(regexNumbers, '');
     },
 
@@ -44,8 +48,6 @@ export default {
               this.$router.push({ name: 'Dashboard' });
             }
           }).catch(err => {
-            debugger;
-            
             this.showAlert(Alert.error, Alert.notAuthorized, Alert.ok);
           });
         }
