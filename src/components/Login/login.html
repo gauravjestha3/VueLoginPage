@@ -1,11 +1,11 @@
 <div id="login">
         <Alertmessage v-show="alert.showAlert" :alert="alert" />
     <label>Enter MobileNumber</label>
-    <input type="text" @keyup="validateMobileNumber()" name="username" maxlength="10" v-model="username"  v-validate="'required|mobileValidity'" />
-<span v-show="errors.has('username')">{{errors.first('username')}}</span>
+    <input type="text" @keyup="validateMobileNumber()" name="MobileNumber" maxlength="10" v-model="MobileNumber"  v-validate="'required|mobileValidity'" />
+<span v-show="errors.has('MobileNumber')">{{errors.first('MobileNumber')}}</span>
     <label>Password</label>
     <input type="password" v-validate="'required'" autocomplete="off" name="password" v-model="password"  />
     <span v-show="errors.has('password')">{{ errors.first('password') }}</span>
-    <button type="submit" @click="login()"> LOgin</button>
+    <button type="submit" @click="login()"> Login</button>
 
 </div>

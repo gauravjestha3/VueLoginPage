@@ -22,7 +22,7 @@ export default {
   mixins:[showAlert],
   data() {
     return {
-      username: " ",
+      MobileNumber: " ",
       password: "",
 
     }
@@ -33,7 +33,7 @@ export default {
   methods: {
     validateMobileNumber: function () {
       var regexNumbers = /([^\d])/;
-      this.username = this.username.replace(regexNumbers, '');
+      this.MobileNumber = this.MobileNumber.replace(regexNumbers, '');
     },
 
     login: function () {

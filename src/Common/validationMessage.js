@@ -1,4 +1,3 @@
 export default{
-   
-    mobileValidation:'Please enter valid number'
-};
+  mobileValidation: 'Please enter valid number'
+}
